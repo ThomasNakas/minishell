@@ -1,0 +1,17 @@
+token
+
+echo "making some tokens" $HOME | ls 'HOME' < file1
+
+[echo, 4, WORD]-->[ , 1, SPACE]-->["making....tokens", 15, D_QUOTED]-->[ , 1, SPACE]-->[ , 1, SPACE]-->[$HOME, 5, EXP_FIELD]-->[|, 1, PIPE]-->[ls, 2, WORD].....--> expanding -->....... [/home/$USER, 5, EXP_FIELD]--> echo "making some tokens" /home/ech$zz | ls 'HOME' < file1-->
+
+           >          $hh        cat <<c  HELLO | echo HELLO (spaces | skip: <, >, <<, >> | spaces | name_of_file: single_quote, boudle_quote, exp_field, word | spaces )
+
+(tokenize-->expand)-->parsing (recognize: cmd, args, file_in, file_out, name_file_in, name_file_out,)
+
+   [cmd:$ss, args: NULL, file_in: 1, name_file_in: file1, here_doc: 1, here_doc_str: $HOME] 
+   |
+   [cmd:echo, args[0]: HELLO, file_in: 0, file_out: 0, name_file_in: NULL, name_file_out: NULL, here_doc: 1, here_doc_str: $HOME] 
+   | 
+   [cmd:cat, args: NULL, file_in: 0, file_out: 0, name_file_in: NULL, name_file_out: NULL, here_doc: 0, here_doc_str: NULL] 
+   |
+   [cmd:cat, args: NULL, file_in: 0, file_out: 0, name_file_in: NULL, name_file_out: NULL, here_doc: 0, here_doc_str: NULL]
